@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="components/css/navbar.css?<?php echo time();?>">
 </head>
 <body>
-    <?php include 'components/html/navbar.php' ?>
 
+    <!-- =============== Start Components Navbar ================== -->
+    <?php include 'components/html/navbar.php' ?>
+    <!-- =============== End Components Navbar ================== -->
+
+    
     <script src="components/js/navbar.js?<?php echo time();?>"></script>
 </body>
 </html>

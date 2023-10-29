@@ -1,3 +1,7 @@
+<?php
+    include 'components/php/login.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
 </head>
 <body>
     <div class="bg-info d-flex justify-content-center align-items-center" style="height: 100vh; width: 100%;">
-        <form class="col-11 col-xs-12 col-md-5">
+        <form class="col-11 col-xs-12 col-md-5" method="POST">
             <!-- start admin name -->
             <div class="mb-3 text-center">
                 <h2 style="font-family: Kh KoulenL;">តារាងចុះឈ្មោះ</h2>
@@ -42,7 +46,7 @@
             <!-- End confirm password -->
 
             <!-- Start submit button -->
-            <button type="button" class="btn btn-primary" style="font-family: Kh Battambang;" id="save-info" disabled>រក្សាទុក</button>
+            <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="save-info" id="save-info" disabled>ចូលប្រព័ន្ធ</button>
             <!-- End submit button -->
         </form>
     </div>
