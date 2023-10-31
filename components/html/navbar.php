@@ -43,7 +43,7 @@
                         <div class="d-flex gap-2 flex-column">
                             <div class="d-flex col-12 col-sm-auto mb-2 mb-sm-0 pe-2" style="cursor: pointer;">
                                 <div class="">
-                                    <img src="asset/image/userlogo.webp" alt="Profile" width="50px" height="50px">
+                                    <img src="../asset/image/userlogo.webp" alt="Profile" width="50px" height="50px">
                                 </div>
                                 <div class="d-flex gap-2">
                                     <div class="" style="width: 100%;white-space: nowrap;">
@@ -55,7 +55,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -63,7 +62,7 @@
 
 
                 <!-- ============ Start Calendar Icon ============ -->
-                <div class="ms-1 col-4 col-sm-auto mb-2 mb-sm-0">
+                <div class="ms-1 col-4 col-sm-auto mb-2 mb-sm-0 me-2">
                     <div class="col-12 col-sm-auto mb-2 mb-sm-0 btn btn-outline-success" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="ri-calendar-check-line"></i>
                     </div>
@@ -116,7 +115,7 @@
                 <!-- ============ Start Profile Navbar ============ -->
                 <div class="ms-1 col-4 col-sm-auto mb-2 mb-sm-0">
                     <div class="" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-                        <img src="asset/image/userlogo.webp" alt="Profile" width="50px" height="50px">
+                        <img src="<?php echo $imagePath; ?>" alt="Profile" width="40px" height="40px" style="border-radius: 50%;">
                     </div>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#" style="font-family: Kh Battambang;" id="create-new-acc">បង្កើតគណនីថ្មី</a></li>
@@ -140,15 +139,15 @@
                 <h1 class="modal-title fs-5" id="staticBackdropLabel" style="font-family: Kh KoulenL;">បង្កើតគណនីថ្មី</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+            <form method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <!-- start admin-image -->
                     <div class="mb-3 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-none">
-                            <input type="file" class="form-control" id="chooseImage">
+                            <input type="file" class="form-control" id="chooseImage" name="chooseImage">
                         </div>
                         <div class="mb-3">
-                            <img src="asset/image/userlogo.webp" alt="" width="150px" hight="150px" id="showImageChoose">
+                            <img src="../asset/image/userlogo.webp" alt="" width="150px" hight="150px" id="showImageChoose">
                         </div>
                         <label for="" class="btn btn-primary" style="font-family: Kh Battambang;" id="SelectImage">ជ្រើសរើសរូបភាព</label>
                     </div>
@@ -181,12 +180,26 @@
 
                 <!-- Start submit button -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" style="font-family: Kh Battambang;" id="save-info" disabled>រក្សាទុក</button>
+                    <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="save-info-db" id="save-info" disabled>រក្សាទុក</button>
                 </div>
                 <!-- End submit button -->
             </form>
         </div>
     </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="" class="rounded me-2" alt="">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
 </div>
 <!-- ============== End Modal popup create new account =============== -->
 
@@ -201,15 +214,15 @@
                 <h1 class="modal-title fs-5" id="staticBackdropLabel" style="font-family: Kh KoulenL;">កែប្រែព័ត៏មានគណនី</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form>
+            <form method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <!-- start admin-image -->
                     <div class="mb-3 d-flex flex-column justify-content-center align-items-center">
                         <div class="d-none">
-                            <input type="file" class="form-control" id="chooseImage-new">
+                            <input type="file" class="form-control" id="chooseImage-new" name="chooseImage-new">
                         </div>
                         <div class="mb-3">
-                            <img src="asset/image/userlogo.webp" alt="" width="150px" hight="150px" id="showImageChoose-new">
+                            <img src="<?php echo $imagePath; ?>" alt="" name="showImageChoose-new" id="showImageChoose-new" style="border-radius: 50%;width: 150px; height: 150px">
                         </div>
                         <label for="" class="btn btn-primary" style="font-family: Kh Battambang;" id="SelectImage-new">ជ្រើសរើសរូបភាពថ្មី</label>
                     </div>
@@ -218,7 +231,7 @@
                     <!-- start admin name -->
                     <div class="mb-3">
                         <label for="admin-name" class="col-form-label" style="font-family: Kh Battambang;">ឈ្មោះអ្នកប្រើប្រាស់ថ្មី:</label>
-                        <input type="text" class="form-control" id="admin-name-new" name="admin-name-new">
+                        <input type="text" class="form-control" id="admin-name-new" name="admin-name-new" value="<?php echo $username?>">
                     </div>
                     <!-- end admin name -->
 
@@ -227,7 +240,7 @@
                         <label for="recipient-name" class="col-form-label" style="font-family: Kh Battambang;">លេខសម្ងាត់ថ្មី:</label>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" id="admin-password-new" name="admin-password-new">
+                        <input type="password" class="form-control" id="admin-password-new" name="admin-password-new" value="<?php echo $password?>">
                         <button type="button" class="input-group-text" for="admin-password-new" id="hide-show-password-new"><i class="fa-solid fa-eye"></i></button>
                     </div>
                     <!-- end admin password -->
@@ -235,14 +248,14 @@
                     <!-- Start confirm password -->
                     <div class="mb-3">
                         <label for="recipient-name" class="col-form-label" style="font-family: Kh Battambang;">បញ្ជាក់លេខសម្ងាត់ថ្មី:</label>
-                        <input type="text" class="form-control" id="admin-password-new-confirm" name="admin-password-new-confirm">
+                        <input type="text" class="form-control" id="admin-password-new-confirm" name="admin-password-new-confirm" value="<?php echo $password?>">
                     </div>
                     <!-- End confirm password -->
                 </div>
 
                 <!-- Start submit button -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" style="font-family: Kh Battambang;" id="save-info-new" disabled>រក្សាទុក</button>
+                    <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="save-info-new" id="save-info-new" disabled>រក្សាទុក</button>
                 </div>
                 <!-- End submit button -->
             </form>
@@ -250,3 +263,4 @@
     </div>
 </div>
 <!-- ============== End Modal popup update info =============== -->
+

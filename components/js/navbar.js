@@ -173,7 +173,6 @@ setInterval(() => {
 
 // ===============Start Modal popup create account ===============
 
-  // Start show and modal popup create account
   $('#create-new-acc').on('click', () => {
     $('#Modal-Popup-Create-New-Account').modal('show');
   });
@@ -236,74 +235,83 @@ setInterval(() => {
   // Event handler for input changes
   $('input').on('input', checkInputs);
 
-  // End show and modal popup create account
-
-
-  // Start show and modal popup update info
-  $('#edit-info').on('click', () => {
-    $('#Modal-Popup-Update-Info').modal('show');
-  });
-
-  // Start choose image
-  $('#chooseImage-new').on('change', function () {
-    var input = this;
-    var image = $('#showImageChoose-new');
-
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-        image.attr('src', e.target.result).css({
-          'border-radius': '50%',
-          'width': '150px',
-          'height': '150px'
-        });
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  });
-
-  $('#SelectImage-new').on('click', function () {
-    $('#chooseImage-new').click();
-  });
-  // End choose image
-
-
-  // Start show and hide password
-  $('#hide-show-password-new').on('click', () => {
-    var passwordInput = $('#admin-password-new');
-    var toggleButton = $('#hide-show-password-new');
-
-    if (passwordInput.attr('type') === 'password') {
-        passwordInput.attr('type', 'text');
-        toggleButton.html('<i class="fa-solid fa-eye-slash"></i>'); // Change to hide icon
-    } else {
-        passwordInput.attr('type', 'password');
-        toggleButton.html('<i class="fa-solid fa-eye"></i>'); // Change to show icon
-    }
-  });
-  // End show and hide password
-
-  // Function to check if all input fields are filled and passwords match
-  function checkInputsNew() {
-    var adminNameNew = $('#admin-name-new').val();
-    var adminPasswordNew = $('#admin-password-new').val();
-    var adminPasswordConfirmNew = $('#admin-password-new-confirm').val();
-
-    // Check if all fields are filled and passwords match
-    var isValidNew = adminNameNew !== '' && adminPasswordNew !== '' && adminPasswordNew === adminPasswordConfirmNew;
-
-    // Enable/disable the submit button based on validation result
-    $('#save-info-new').prop('disabled', !isValidNew);
-  }
-
-  // Event handler for input changes
-  $('input').on('input', checkInputsNew);
-
-  // End show and modal popup update info
-
-
-
-
 // ===============Stop Modal popup create account ===============
+
+
+
+// ===============Start Modal popup Update info ===============
+$('#edit-info').on('click', () => {
+  $('#Modal-Popup-Update-Info').modal('show');
+});
+
+// Start choose image
+$('#chooseImage-new').on('change', function () {
+  var input = this;
+  var image = $('#showImageChoose-new');
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      image.attr('src', e.target.result).css({
+        'border-radius': '50%',
+        'width': '150px',
+        'height': '150px'
+      });
+    };
+
+    reader.readAsDataURL(input.files[0]);
+  }
+});
+
+$('#SelectImage-new').on('click', function () {
+  $('#chooseImage-new').click();
+});
+// End choose image
+
+
+// Start show and hide password
+$('#hide-show-password-new').on('click', () => {
+  var passwordInput = $('#admin-password-new');
+  var toggleButton = $('#hide-show-password-new');
+
+  if (passwordInput.attr('type') === 'password') {
+      passwordInput.attr('type', 'text');
+      toggleButton.html('<i class="fa-solid fa-eye-slash"></i>'); // Change to hide icon
+  } else {
+      passwordInput.attr('type', 'password');
+      toggleButton.html('<i class="fa-solid fa-eye"></i>'); // Change to show icon
+  }
+});
+// End show and hide password
+
+// Function to check if all input fields are filled and passwords match
+function checkInputsNew() {
+  var adminNameNew = $('#admin-name-new').val();
+  var adminPasswordNew = $('#admin-password-new').val();
+  var adminPasswordConfirmNew = $('#admin-password-new-confirm').val();
+
+  // Check if all fields are filled and passwords match
+  var isValidNew = adminNameNew !== '' && adminPasswordNew !== '' && adminPasswordNew === adminPasswordConfirmNew;
+
+  // Enable/disable the submit button based on validation result
+  $('#save-info-new').prop('disabled', !isValidNew);
+}
+
+// Event handler for input changes
+$('input').on('input', checkInputsNew);
+
+// ===============End Modal popup Update info ===============
+
+
+
+// ===============Start Logout ===============
+  $('#logout').on('click', function () {
+    const message = confirm('តើ​អ្នក​ប្រាកដ​ជា​ចង់​ចេញ?');
+
+    if(message){
+      window.location.href ='../index.php';
+    }
+
+  });
+// ===============Start Logout ===============

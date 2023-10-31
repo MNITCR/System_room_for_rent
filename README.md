@@ -1,9 +1,22 @@
 # System_room_for_rent
 
+
 CREATE TABLE tbl_user (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     adm_name VARCHAR(50) NOT NULL,
     adm_password VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP NOT NULL,
-    updated_at TIMESTAMP NOT NULL,
+    img_path VARCHAR(100) NOT NULL,
+    uniqcode VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE tbl_img (
+    img_id INT AUTO_INCREMENT PRIMARY KEY,
+    img_pathSlid VARCHAR(100) NOT NULL,
+    title_slide VARCHAR(50) NOT NULL,
+    detail_slide VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

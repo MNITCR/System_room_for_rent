@@ -1,4 +1,5 @@
 <?php
+    include 'components/php/connection.php';
     include 'components/php/login.php';
 ?>
 
@@ -46,7 +47,7 @@
             <!-- End confirm password -->
 
             <!-- Start submit button -->
-            <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="save-info" id="save-info" disabled>ចូលប្រព័ន្ធ</button>
+            <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="login" id="save-info" disabled>ចូលប្រព័ន្ធ</button>
             <!-- End submit button -->
         </form>
     </div>
