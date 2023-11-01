@@ -286,9 +286,9 @@
         margin-right: 400px;
     }
     .main-calendar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .date-time-value{
         left: 55%;

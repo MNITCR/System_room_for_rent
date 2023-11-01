@@ -117,7 +117,7 @@
 
                 <!-- Start submit button -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="Add-info-Slide" id="Add-info-Slide">រក្សាទុក</button>
+                    <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="Add-info-Card-Simple" id="Add-info-Card-Simple">រក្សាទុក</button>
                 </div>
                 <!-- End submit button -->
             </form>

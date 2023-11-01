@@ -85,39 +85,85 @@
             <form method="POST" enctype="multipart/form-data">
                 <div class="modal-body">
                     <!-- start image -->
-                    <div class="mb-4">
-                        <div class="d-none">
-                            <input type="file" class="form-control" id="chooseImage-Slide-Card-Vip" name="chooseImage-Slide-Card-Vip">
-                        </div>
-                        <div class="" style="width: 100%; height: 350px">
-                            <img src="" alt="" name="showImageChoose-Slide-Card-Vip" id="showImageChoose-Slide-Card-Vip" style="border-radius: 5px;width: 100%; height: 300px">
-                            <div class="text-center mt-3">
-                                <label for="" class="btn btn-primary" style="font-family: Kh Battambang;" id="SelectImage-Slide-Card-Vip">ជ្រើសរើសរូបភាព</label>
+                    <div class="d-flex flex-wrap">
+                        <!-- left -->
+                        <div class="col-xs-12 col-sm-6 pe-0 pe-sm-2 pe-md-2 pe-lg-2">
+                            <div class="d-none">
+                                <input type="file" class="form-control" id="chooseImage-Slide-Card-Vip" name="chooseImage-Slide-Card-Vip">
+                            </div>
+                            <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                                <img class="col-12 col-md-12 col-sm-6 col-lg-6" src="../asset/image/slide1.jpg" alt="" name="showImageChoose-Slide-Card-Vip" id="showImageChoose-Slide-Card-Vip" style="border-radius: 5px;width: 100%; height: 305px;">
+                                <div class="text-center mt-3">
+                                    <!-- <label for="" class="btn btn-sm btn-primary" style="font-family: Kh Battambang;" id="SelectImage-Slide-Card-Vip">ជ្រើសរើសរូបភាព</label> -->
+                                </div>
                             </div>
                         </div>
+                        <!-- end left -->
+
+                        <!-- right -->
+                        <div class="col-xs-12 col-sm-6 mt-3 mt-sm-0 mt-md-0 mt-lg-0">
+                            <h4 style="font-family: Kh KoulenL;" class="text-center">មាតិការ</h4>
+
+                            <!-- Add detail content info -->
+                            <div class="">
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm" style="font-family: Kh Battambang;">តម្លៃ</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text">$</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">រ</span>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm" style="font-family: Kh Battambang;">ទំហំ</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">ទ</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">ប</span>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm" style="font-family: Kh Battambang;">បន្ទប់</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">ប/ទ</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">ប/គ</span>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm" style="font-family: Kh Battambang;">ទីតាំង</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">អ</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <span class="input-group-text" style="font-family: Kh Battambang;">ជ</span>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <input type="file" class="form-control" id="inputGroupFile02">
+                                    <label class="input-group-text" for="inputGroupFile02" style="font-family: Kh Battambang;">ជ្រើសរើស</label>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm" style="font-family: Kh Battambang;">ចំណងជើង</span>
+                                    <textarea name="" id="" rows="1"  class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></textarea>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <!-- end right -->
                     </div>
                     <!-- end image -->
 
-                    <div class="d-flex row g-2">
-                        <!-- start title -->
-                        <div class="mb-3 col-12 col-sm-6 form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="title-name-Slide-Card-Vip" name="title-name-Slide-Card-Vip" style="height: 100px"></textarea>
-                            <label for="title-name-Slide" style="font-family: Kh Battambang;">ចំណងជើង</label>
-                        </div>
-                        <!-- end title -->
 
-                        <!-- start detail -->
-                        <div class="mb-3 col-12 col-sm-6 form-floating">
-                            <textarea class="form-control" placeholder="Leave a comment here" id="detail-title-Slide-Card-Vip" name="detail-title-Slide-Card-Vip" style="height: 100px"></textarea>
-                            <label for="detail-title-Slide-Card-Vip" style="font-family: Kh Battambang;">ពិពណ៌នាបន្ថែម</label>
-                        </div>
-                        <!-- end detail -->
+                    <!-- start sub image -->
+                    <div class="d-flex flex-wrap gap-3 justify-content-center " id="main-add-image-vip">
+
+                        <!-- add more card from addCard.JS -->
+
                     </div>
+                    <!-- end sub image -->
                 </div>
 
                 <!-- Start submit button -->
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="Add-info-Slide" id="Add-info-Slide">រក្សាទុក</button>
+                    <button type="button" class="btn btn-success" style="font-family: Kh Battambang;" id="add-more-card-vip-btn">បន្ថែមរូបភាព</button>
+                    <button type="submit" class="btn btn-primary" style="font-family: Kh Battambang;" name="Add-info-Card-Vip" id="Add-info-Card-Vip">រក្សាទុក</button>
                 </div>
                 <!-- End submit button -->
             </form>
