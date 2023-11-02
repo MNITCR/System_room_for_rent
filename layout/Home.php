@@ -9,6 +9,9 @@
     // Slide
     include '../components/php/slideImg/addImg.php';
     include '../components/php/slideImg/update.php';
+
+    // VipRoom
+    // include '../components/php/vipRoom/insert_data.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +28,7 @@
 
     <!-- =============== Start Components Navbar ================== -->
     <?php include '../components/html/navbar.php' ?>
-    <!-- =============== End Components Navbar ================== --
+    <!-- =============== End Components Navbar ================== -->
 
 
     <!-- ================= Start slide Image ================= -->

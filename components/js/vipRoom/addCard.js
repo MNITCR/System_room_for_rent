@@ -5,9 +5,32 @@ $(document).ready(function() {
     });
 
 
+
+    // ============ Start one more cards ============
+    $(document).on('change', '#chooseImage-Slide-Card-Vip', function () {
+        var input = this;
+        var image = $(`#showImageChoose-Slide-Card-Vip`);
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#showImageChoose-Slide-Card-Vip').html('<img src="' + e.target.result + '" id="image-id-user-select-vip-one" alt="Selected Image" style="width: 100%; height: 305px;border-radius: 3px;">');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    });
+
+    $(document).on('click', '#showImageChoose-Slide-Card-Vip', function () {
+        $(`#chooseImage-Slide-Card-Vip`).click();  // Fixed typo in the ID
+    });
+    // ============ End one more cards ============
+
+
+
     // ============ Start adding more cards ============
+    var cardCount = 1;
     $(document).ready(function () {
-        var cardCount = 1;
 
         $("#add-more-card-vip-btn").click(function () {
             // Create a new card
@@ -52,7 +75,7 @@ $(document).ready(function() {
 
                     reader.onload = function (e) {
                         console.log(dataId + e.target.result);
-                        $('#add-image-vip-append-' + dataId).html('<img src="' + e.target.result + '" id="image-id-user-select-vip-' + dataId + '" alt="Selected Image" style="width: 100%; height: 134px;">');
+                        $('#add-image-vip-append-' + dataId).html('<img src="' + e.target.result + '" id="image-id-user-select-vip-' + dataId + '" alt="Selected Image" style="width: 100%; height: 134px;border-radius: 3px;" multiple>');
                     };
 
                     // Read the selected file as Data URL
@@ -70,11 +93,74 @@ $(document).ready(function() {
 
         });
     });
-
-
     // ============ End adding more cards ============
 
 
 
+    // ============ Start insert data to database ============
+
+    $(document).ready(function () {
+        $("#vipForm").submit(function (e) {
+            e.preventDefault();
+
+            // Get form data
+            var formData = new FormData(this);
+
+            // Add data from the card dynamically created
+            $(".card").each(function () {
+                var cardId = $(this).attr("data-id");
+                var title = $("#add-title-vip-" + cardId).val();
+
+                // Only append the title if it is defined
+                if (title !== undefined && title !== null) {
+                    formData.append("card_titles[]", title);
+                }
+
+                // Check if file input exists
+                var fileInput = $("#add-sub-image-vip-" + cardId);
+                if (fileInput.length > 0 && fileInput[0].files.length > 0) {
+                    // Add image files
+                    var imageFile = fileInput[0].files[0];
+                    formData.append("card_images[]", imageFile);
+                }
+                console.log(imageFile);
+            });
+
+            // Add individual form fields
+            formData.append("vip_title", $("#vip_title").val());
+            formData.append("vip_title_detail", $("#vip_title_detail").val());
+            formData.append("vip_price_dollar", $("#vip_price_dollar").val());
+            formData.append("vip_size_width", $("#vip_size_width").val());
+            formData.append("vip_size_length", $("#vip_size_length").val());
+            formData.append("vip_room_water", $("#vip_room_water").val());
+            formData.append("vip_room_wc", $("#vip_room_wc").val());
+            formData.append("vip_building", $("#vip_building").val());
+            formData.append("vip_floor", $("#vip_floor").val());
+
+
+            // Send form data to PHP script using AJAX
+            $.ajax({
+                url: "../components/php/vipRoom/insert_data.php",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if(response.trim() === "success") {
+                        window.location.href="../layout/Home.php";
+                    }else {
+                        console.log("Unexpected response:", response);
+                    }
+                    console.log(response);
+                },
+                error: function (error) {
+                    // Handle errors
+                    console.log(error);
+                }
+            });
+        });
+    });
+
+    // ============ End insert data to database ============
 
 });
