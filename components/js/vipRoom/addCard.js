@@ -1,9 +1,131 @@
 $(document).ready(function() {
+    // ============ Start show modal and Tooltip ============
     $('[data-bs-toggle="tooltip"]').tooltip();
     $('#add-card-vip').on('click', function(){
         $('#Modal-Popup-Add-Info-Card-Vip').modal('show');
     });
+    // ============ End show modal and Tooltip ============
 
+
+    // ============ Start validation all input ============
+        // Start validation on dollar input
+        var vip_price_dollar = $('#vip_price_dollar');
+        vip_price_dollar.on('input', function() {
+            price_dollar(this);
+        });
+        // Function to validate the price dollar input
+        function price_dollar(input) {
+            var phoneRegex = /^[0-9]+$/; // Match only digits
+
+            // Check if the input is empty
+            if (input.value.trim() === '') {
+                input.classList.remove('is-valid', 'is-invalid');
+                return;
+            }
+
+            if (input.value.length != '' && phoneRegex.test(input.value)) {
+                input.classList.add('is-valid');
+                input.classList.remove('is-invalid');
+            } else if (input.value.length < 0 || !phoneRegex.test(input.value)) {
+                input.classList.remove('is-valid');
+                input.classList.add('is-invalid');
+            }
+            else {
+                input.classList.remove('is-valid', 'is-invalid');
+            }
+        }
+        // End validation on dollar input
+
+
+        // Start validation on price real input
+        var vip_price_real = $('#vip_price_real');
+        vip_price_real.on('input', function() {
+            price_real(this);
+        });
+
+        // Function to validate the price real input
+        function price_real(input) {
+            var phoneRegex = /^[0-9]+$/; // Match only digits
+
+            // Check if the input is empty
+            if (input.value.trim() === '') {
+                input.classList.remove('is-valid', 'is-invalid');
+                return;
+            }
+
+            if (input.value.length != '' && phoneRegex.test(input.value)) {
+                input.classList.add('is-valid');
+                input.classList.remove('is-invalid');
+            } else if (input.value.length < 0 || !phoneRegex.test(input.value)) {
+                input.classList.remove('is-valid');
+                input.classList.add('is-invalid');
+            }
+            else {
+                input.classList.remove('is-valid', 'is-invalid');
+            }
+        }
+        // End validation on price real input
+
+
+        // Start validation on size width
+        var vip_size_width = $('#vip_size_width');
+        vip_size_width.on('input', function() {
+            size_width(this);
+        });
+
+        // Function to validate the size width
+        function size_width(input) {
+            var phoneRegex = /^[0-9]+$/; // Match only digits
+
+            // Check if the input is empty
+            if (input.value.trim() === '') {
+                input.classList.remove('is-valid', 'is-invalid');
+                return;
+            }
+
+            if (input.value.length != '' && phoneRegex.test(input.value)) {
+                input.classList.add('is-valid');
+                input.classList.remove('is-invalid');
+            } else if (input.value.length < 0 || !phoneRegex.test(input.value)) {
+                input.classList.remove('is-valid');
+                input.classList.add('is-invalid');
+            }
+            else {
+                input.classList.remove('is-valid', 'is-invalid');
+            }
+        }
+        // End validation on size width
+
+
+        // Start validation on size length
+        var vip_size_length = $('#vip_size_length');
+        vip_size_length.on('input', function() {
+            size_length(this);
+        });
+
+        // Function to validate the size length
+        function size_length(input) {
+            var phoneRegex = /^[0-9]+$/; // Match only digits
+
+            // Check if the input is empty
+            if (input.value.trim() === '') {
+                input.classList.remove('is-valid', 'is-invalid');
+                return;
+            }
+
+            if (input.value.length != '' && phoneRegex.test(input.value)) {
+                input.classList.add('is-valid');
+                input.classList.remove('is-invalid');
+            } else if (input.value.length < 0 || !phoneRegex.test(input.value)) {
+                input.classList.remove('is-valid');
+                input.classList.add('is-invalid');
+            }
+            else {
+                input.classList.remove('is-valid', 'is-invalid');
+            }
+        }
+        // End validation on size length input
+    // ============ End validation all input ============
 
 
     // ============ Start one more cards ============
@@ -29,8 +151,8 @@ $(document).ready(function() {
 
 
     // ============ Start adding more cards ============
-    var cardCount = 1;
     $(document).ready(function () {
+        var cardCount = 1;
 
         $("#add-more-card-vip-btn").click(function () {
             // Create a new card
@@ -98,7 +220,6 @@ $(document).ready(function() {
 
 
     // ============ Start insert data to database ============
-
     $(document).ready(function () {
         $("#vipForm").submit(function (e) {
             e.preventDefault();
@@ -160,7 +281,6 @@ $(document).ready(function() {
             });
         });
     });
-
     // ============ End insert data to database ============
 
 });
