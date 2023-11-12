@@ -11,7 +11,8 @@
     include '../components/php/slideImg/update.php';
 
     // VipRoom
-    // include '../components/php/vipRoom/insert_data.php';
+    // include '../components/php/vipRoom/deleteCard.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +63,10 @@
 
     <!-- VIP ROOM -->
     <script src="../components/js/vipRoom/addCard.js?<?php echo time();?>"></script>
+    <script src="../components/js/vipRoom/showCardSub.js?<?php echo time();?>"></script>
+    <script src="../components/js/vipRoom/deleteCard.js?<?php echo time();?>"></script>
+
+
 
     <!-- SIMPLE ROOM -->
     <script src="../components/js/simpleRoom/addCard.js?<?php echo time();?>"></script>

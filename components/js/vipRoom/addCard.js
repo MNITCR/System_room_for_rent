@@ -12,7 +12,21 @@ $(document).ready(function() {
         var vip_price_dollar = $('#vip_price_dollar');
         vip_price_dollar.on('input', function() {
             price_dollar(this);
+            var dollarValue = $(this).val();
+
+            // Remove any non-numeric characters from the input
+            dollarValue = dollarValue.replace(/[^\d.]/g, '');
+
+            // Convert the dollar value to real Khmer using the exchange rate (1$ = 4100 real)
+            var realValue = dollarValue * 4100;
+
+            // Format the real value with commas
+            var formattedRealValue = realValue.toLocaleString();
+
+            // Update the real input with the formatted value
+            $("#vip_price_real").val(formattedRealValue);
         });
+
         // Function to validate the price dollar input
         function price_dollar(input) {
             var phoneRegex = /^[0-9]+$/; // Match only digits
@@ -125,6 +139,7 @@ $(document).ready(function() {
             }
         }
         // End validation on size length input
+
     // ============ End validation all input ============
 
 
